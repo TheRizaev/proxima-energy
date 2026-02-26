@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowUpRight, Zap, MapPin, Leaf, Clock, Cpu, Star, Quote } from 'lucide-react';
+import { ArrowUpRight, Zap, MapPin, DollarSign, Clock, Cpu, Star, Quote } from 'lucide-react'; // Заменили Leaf на DollarSign
 import { useLanguage } from '../context/LanguageContext';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -31,7 +31,7 @@ export default function Portfolio() {
       }
     }, sectionRef);
     return () => ctx.revert();
-  }, [t.port]); // Перезапуск анимаций при смене языка
+  }, [t.port]);
 
   const addToCardsRef = (el: HTMLDivElement | null) => {
     if (el && !cardsRef.current.includes(el)) cardsRef.current.push(el);
@@ -89,10 +89,11 @@ export default function Portfolio() {
                     </div>
                   </div>
                   <div className="flex flex-col gap-1">
-                    <span className="text-xs text-gray-500 uppercase tracking-wider">{t.port.co2}</span>
+                    {/* Заменили CO2 на Экономию */}
+                    <span className="text-xs text-gray-500 uppercase tracking-wider">{t.port.savings}</span>
                     <div className="flex items-center gap-2 text-white">
-                      <Leaf className="w-4 h-4 text-[#10B981]" />
-                      <span className="font-mono font-bold text-lg">{project.co2Val} {t.port.tons}</span>
+                      <DollarSign className="w-4 h-4 text-[#10B981]" />
+                      <span className="font-mono font-bold text-lg">{project.savingsVal} {t.port.currency}</span>
                     </div>
                   </div>
                   <div className="flex flex-col gap-1">
@@ -108,7 +109,7 @@ export default function Portfolio() {
           ))}
         </div>
 
-        {/* НОВЫЙ БЛОК: Текстовые отзывы с рейтингом */}
+        {/* Текстовые отзывы с рейтингом */}
         <div className="pt-12 border-t border-white/10">
           <div className="max-w-2xl mb-12">
             <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -126,22 +127,18 @@ export default function Portfolio() {
                 ref={addToReviewsRef}
                 className="group relative rounded-2xl p-8 bg-white/5 border border-white/10 hover:border-primary/30 transition-all duration-300 flex flex-col h-full overflow-hidden"
               >
-                {/* Фоновая иконка кавычек для стиля */}
                 <Quote className="absolute top-6 right-6 w-16 h-16 text-white/5 group-hover:text-primary/10 transition-colors duration-500 rotate-12" />
                 
-                {/* Звездный рейтинг */}
                 <div className="flex gap-1 mb-6 relative z-10">
                   {[...Array(review.rating)].map((_, i) => (
                     <Star key={i} className="w-5 h-5 fill-primary text-primary" />
                   ))}
                 </div>
                 
-                {/* Текст отзыва */}
                 <p className="text-gray-300 text-base leading-relaxed mb-8 flex-grow italic relative z-10">
                   «{review.text}»
                 </p>
                 
-                {/* Информация об авторе */}
                 <div className="mt-auto border-t border-white/10 pt-6 relative z-10">
                   <h4 className="text-lg font-bold text-white mb-1">{review.company}</h4>
                   <p className="text-sm text-gray-500">{review.author}</p>

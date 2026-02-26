@@ -32,15 +32,19 @@ export const dictionaries = {
       card3Title: "Экстремальные условия", card3Desc: "Аппаратные компоненты рассчитаны на бесперебойную генерацию при температурных градиентах от -60°С до +50°C. Системы терморегуляции инверторов предотвращают троттлинг.",
       card4Title: "EPC подрядчик полного цикла", card4Desc: "Engineering (Проектирование) → Procurement (Закупки) → Construction (Строительство). Единая точка ответственности за ввод объекта в эксплуатацию.", card4Btn: "Аудит объекта"
     },
+    suppliers: {
+      title: "Надежные", titleSpan: "поставщики", 
+      desc: "Мы используем оборудование только от сертифицированных Tier-1 производителей из мирового рейтинга BloombergNEF."
+    },
     port: {
       title: "Технические", titleSpan: "кейсы",
       desc: "Детальный разбор реализованных проектов. Математика окупаемости и спецификации интегрированного оборудования.",
-      btn: "Запросить референс-лист", power: "Мощность", payback: "Окупаемость", co2: "Снижение CO₂", equip: "Оборудование", year: "года", tons: "тонн/год",
+      btn: "Запросить референс-лист", power: "Мощность", payback: "Окупаемость", savings: "Экономия", equip: "Оборудование", year: "года", currency: "$/год",
       projects: [
-        { id: 1, client: "Lukoil Uzbekistan", power: "200 кВт", location: "Бухарская область", paybackVal: "3.2", co2Val: "180", modules: "Tier-1 монокристалл", image: "https://images.unsplash.com/photo-1708568328382-8daa0944d801?q=80&w=1470&auto=format&fit=crop" },
-        { id: 2, client: "Westminster International School", power: "150 кВт", location: "г. Ташкент", paybackVal: "3.5", co2Val: "135", modules: "Оптимизаторы мощности", image: "https://images.unsplash.com/photo-1724041875334-0a6397111c7e?q=80&w=687&auto=format&fit=crop" },
-        { id: 3, client: "Sedat Triko Tashkent", power: "500 кВт", location: "г. Ташкент", paybackVal: "2.8", co2Val: "450", modules: "Промышленный инвертор", image: "https://images.unsplash.com/photo-1611365892117-00ac5ef43c90?q=80&w=1470&auto=format&fit=crop" },
-        { id: 4, client: "Agromir Самарканд", power: "1.2 МВт", location: "г. Самарканд", paybackVal: "2.5", co2Val: "1080", modules: "Трекерная система", image: "https://images.unsplash.com/photo-1617269778723-73a40cf299bd?q=80&w=1470&auto=format&fit=crop" }
+        { id: 1, client: "Lukoil Uzbekistan", power: "200 кВт", location: "Бухарская область", paybackVal: "3.2", savingsVal: "28 000", modules: "Tier-1 монокристалл", image: "https://images.unsplash.com/photo-1708568328382-8daa0944d801?q=80&w=1470&auto=format&fit=crop" },
+        { id: 2, client: "Westminster International School", power: "150 кВт", location: "г. Ташкент", paybackVal: "3.5", savingsVal: "21 000", modules: "Оптимизаторы мощности", image: "https://images.unsplash.com/photo-1724041875334-0a6397111c7e?q=80&w=687&auto=format&fit=crop" },
+        { id: 3, client: "Sedat Triko Tashkent", power: "500 кВт", location: "г. Ташкент", paybackVal: "2.8", savingsVal: "75 000", modules: "Промышленный инвертор", image: "https://images.unsplash.com/photo-1611365892117-00ac5ef43c90?q=80&w=1470&auto=format&fit=crop" },
+        { id: 4, client: "Agromir Самарканд", power: "1.2 МВт", location: "г. Самарканд", paybackVal: "2.5", savingsVal: "180 000", modules: "Трекерная система", image: "https://images.unsplash.com/photo-1617269778723-73a40cf299bd?q=80&w=1470&auto=format&fit=crop" }
       ],
       reviewsTitle: "Отзывы", reviewsTitleSpan: "клиентов",
       reviewsDesc: "Что говорят о нас партнеры после успешного запуска проектов и оценки реальной генерации.",
@@ -109,15 +113,19 @@ export const dictionaries = {
       card3Title: "Ekstremal sharoitlar", card3Desc: "Uskuna komponentlari -60°C dan +50°C gacha bo'lgan harorat gradientlarida uzluksiz ishlash uchun mo'ljallangan. Invertor issiqlikni boshqarish tizimlari trottlingning oldini oladi.",
       card4Title: "To'liq siklli EPC pudratchisi", card4Desc: "Engineering (Loyihalash) → Procurement (Xarid) → Construction (Qurilish). Ob'ektni foydalanishga topshirish uchun yagona javobgarlik nuqtasi.", card4Btn: "Ob'ekt auditi"
     },
+    suppliers: {
+      title: "Ishonchli", titleSpan: "yetkazib beruvchilar", 
+      desc: "Biz faqat BloombergNEF jahon reytingidagi sertifikatlangan Tier-1 ishlab chiqaruvchilarining uskunalaridan foydalanamiz."
+    },
     port: {
       title: "Texnik", titleSpan: "keyslar",
       desc: "Amalga oshirilgan loyihalarning batafsil tahlili. Qoplash matematikasi va o'rnatilgan uskunalarning xususiyatlari.",
-      btn: "Referens-varaqni so'rash", power: "Quvvat", payback: "Qoplash muddati", co2: "CO₂ kamayishi", equip: "Uskunalar", year: "yil", tons: "tonna/yil",
+      btn: "Referens-varaqni so'rash", power: "Quvvat", payback: "Qoplash muddati", savings: "Tejamkorlik", equip: "Uskunalar", year: "yil", currency: "$/yil",
       projects: [
-        { id: 1, client: "Lukoil Uzbekistan", power: "200 kVt", location: "Buxoro viloyati", paybackVal: "3.2", co2Val: "180", modules: "Tier-1 monokristall", image: "https://images.unsplash.com/photo-1708568328382-8daa0944d801?q=80&w=1470&auto=format&fit=crop" },
-        { id: 2, client: "Westminster International School", power: "150 kVt", location: "Toshkent sh.", paybackVal: "3.5", co2Val: "135", modules: "Quvvat optimizatorlari", image: "https://images.unsplash.com/photo-1724041875334-0a6397111c7e?q=80&w=687&auto=format&fit=crop" },
-        { id: 3, client: "Sedat Triko Tashkent", power: "500 kVt", location: "Toshkent sh.", paybackVal: "2.8", co2Val: "450", modules: "Sanoat invertori", image: "https://images.unsplash.com/photo-1611365892117-00ac5ef43c90?q=80&w=1470&auto=format&fit=crop" },
-        { id: 4, client: "Agromir Samarqand", power: "1.2 MVt", location: "Samarqand sh.", paybackVal: "2.5", co2Val: "1080", modules: "Treker tizimi", image: "https://images.unsplash.com/photo-1617269778723-73a40cf299bd?q=80&w=1470&auto=format&fit=crop" }
+        { id: 1, client: "Lukoil Uzbekistan", power: "200 kVt", location: "Buxoro viloyati", paybackVal: "3.2", savingsVal: "28 000", modules: "Tier-1 monokristall", image: "https://images.unsplash.com/photo-1708568328382-8daa0944d801?q=80&w=1470&auto=format&fit=crop" },
+        { id: 2, client: "Westminster International School", power: "150 kVt", location: "Toshkent sh.", paybackVal: "3.5", savingsVal: "21 000", modules: "Quvvat optimizatorlari", image: "https://images.unsplash.com/photo-1724041875334-0a6397111c7e?q=80&w=687&auto=format&fit=crop" },
+        { id: 3, client: "Sedat Triko Tashkent", power: "500 kVt", location: "Toshkent sh.", paybackVal: "2.8", savingsVal: "75 000", modules: "Sanoat invertori", image: "https://images.unsplash.com/photo-1611365892117-00ac5ef43c90?q=80&w=1470&auto=format&fit=crop" },
+        { id: 4, client: "Agromir Samarqand", power: "1.2 MVt", location: "Samarqand sh.", paybackVal: "2.5", savingsVal: "180 000", modules: "Treker tizimi", image: "https://images.unsplash.com/photo-1617269778723-73a40cf299bd?q=80&w=1470&auto=format&fit=crop" }
       ],
       reviewsTitle: "Mijozlar", reviewsTitleSpan: "sharhlari",
       reviewsDesc: "Loyihalar muvaffaqiyatli ishga tushirilgandan va real generatsiya baholangandan keyin hamkorlarimiz biz haqimizda nima deyishadi.",
@@ -186,15 +194,19 @@ export const dictionaries = {
       card3Title: "Extreme Conditions", card3Desc: "Hardware components are designed for uninterrupted generation at temperature gradients from -60°C to +50°C. Inverter thermal management systems prevent throttling.",
       card4Title: "Full-Cycle EPC Contractor", card4Desc: "Engineering → Procurement → Construction. A single point of responsibility for commissioning the facility.", card4Btn: "Facility Audit"
     },
+    suppliers: {
+      title: "Reliable", titleSpan: "Suppliers", 
+      desc: "We use equipment only from certified Tier-1 manufacturers from the BloombergNEF global ranking."
+    },
     port: {
       title: "Technical", titleSpan: "Cases",
       desc: "Detailed breakdown of implemented projects. Payback mathematics and specifications of integrated equipment.",
-      btn: "Request Reference List", power: "Capacity", payback: "Payback", co2: "CO₂ Reduction", equip: "Equipment", year: "years", tons: "tons/year",
+      btn: "Request Reference List", power: "Capacity", payback: "Payback", savings: "Savings", equip: "Equipment", year: "years", currency: "$/year",
       projects: [
-        { id: 1, client: "Lukoil Uzbekistan", power: "200 kW", location: "Bukhara Region", paybackVal: "3.2", co2Val: "180", modules: "Tier-1 monocrystal", image: "https://images.unsplash.com/photo-1708568328382-8daa0944d801?q=80&w=1470&auto=format&fit=crop" },
-        { id: 2, client: "Westminster International School", power: "150 kW", location: "Tashkent", paybackVal: "3.5", co2Val: "135", modules: "Power Optimizers", image: "https://images.unsplash.com/photo-1724041875334-0a6397111c7e?q=80&w=687&auto=format&fit=crop" },
-        { id: 3, client: "Sedat Triko Tashkent", power: "500 kW", location: "Tashkent", paybackVal: "2.8", co2Val: "450", modules: "Industrial Inverter", image: "https://images.unsplash.com/photo-1611365892117-00ac5ef43c90?q=80&w=1470&auto=format&fit=crop" },
-        { id: 4, client: "Agromir Samarkand", power: "1.2 MW", location: "Samarkand", paybackVal: "2.5", co2Val: "1080", modules: "Tracker System", image: "https://images.unsplash.com/photo-1617269778723-73a40cf299bd?q=80&w=1470&auto=format&fit=crop" }
+        { id: 1, client: "Lukoil Uzbekistan", power: "200 kW", location: "Bukhara Region", paybackVal: "3.2", savingsVal: "28 000", modules: "Tier-1 monocrystal", image: "https://images.unsplash.com/photo-1708568328382-8daa0944d801?q=80&w=1470&auto=format&fit=crop" },
+        { id: 2, client: "Westminster International School", power: "150 kW", location: "Tashkent", paybackVal: "3.5", savingsVal: "21 000", modules: "Power Optimizers", image: "https://images.unsplash.com/photo-1724041875334-0a6397111c7e?q=80&w=687&auto=format&fit=crop" },
+        { id: 3, client: "Sedat Triko Tashkent", power: "500 kW", location: "Tashkent", paybackVal: "2.8", savingsVal: "75 000", modules: "Industrial Inverter", image: "https://images.unsplash.com/photo-1611365892117-00ac5ef43c90?q=80&w=1470&auto=format&fit=crop" },
+        { id: 4, client: "Agromir Samarkand", power: "1.2 MW", location: "Samarkand", paybackVal: "2.5", savingsVal: "180 000", modules: "Tracker System", image: "https://images.unsplash.com/photo-1617269778723-73a40cf299bd?q=80&w=1470&auto=format&fit=crop" }
       ],
       reviewsTitle: "Client", reviewsTitleSpan: "Reviews",
       reviewsDesc: "What our partners say about us after the successful launch of projects and evaluation of actual generation.",
