@@ -67,13 +67,41 @@ export default function Header() {
 
       </div>
 
+      {/* Mobile Navigation Menu */}
       <div className={`md:hidden absolute top-0 left-0 w-full h-screen bg-[#0A0A0A] transition-transform duration-500 ease-in-out flex flex-col px-6 pt-24 pb-8 gap-6 ${isMobileMenuOpen ? 'translate-y-0' : '-translate-y-full'}`} style={{ zIndex: 40 }}>
         {navLinks.map((link) => (
           <a key={link.name} href={link.href} className="text-2xl font-bold text-white border-b border-white/5 pb-4" onClick={() => setIsMobileMenuOpen(false)}>
             {link.name}
           </a>
         ))}
-        <a href="#contact" className="w-full bg-primary text-bgDark text-center py-4 rounded-xl font-bold text-lg mt-auto mb-10" onClick={() => setIsMobileMenuOpen(false)}>
+
+        {/* Блок переключения языка в мобильном меню */}
+        <div className="flex flex-col gap-4 mt-4">
+          <span className="text-gray-500 text-sm font-medium uppercase tracking-widest flex items-center gap-2">
+            <Globe size={16} /> {language === 'ru' ? 'Выберите язык' : 'Tilni tanlang'}
+          </span>
+          <div className="flex gap-3">
+            {['ru', 'uz', 'en'].map((lang) => (
+              <button
+                key={lang}
+                onClick={() => {
+                  setLanguage(lang as 'ru' | 'uz' | 'en');
+                  // Можно закрывать меню после выбора, если нужно:
+                  // setIsMobileMenuOpen(false); 
+                }}
+                className={`flex-1 py-3 rounded-xl border font-bold transition-all ${
+                  language === lang 
+                    ? 'bg-primary/20 border-primary text-primary' 
+                    : 'bg-white/5 border-white/10 text-gray-400'
+                }`}
+              >
+                {lang.toUpperCase()}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <a href="#contact" className="w-full bg-primary text-black text-center py-4 rounded-xl font-bold text-lg mt-auto mb-10" onClick={() => setIsMobileMenuOpen(false)}>
           {t.header.contactBtn}
         </a>
       </div>
