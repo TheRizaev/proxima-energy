@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowUpRight, Zap, MapPin, Leaf, Clock, Cpu } from 'lucide-react';
+import { ArrowUpRight, Zap, MapPin, Leaf, Clock, Cpu, Star, Quote } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -11,25 +11,46 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Portfolio() {
   const sectionRef = useRef<HTMLElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const reviewsRef = useRef<(HTMLDivElement | null)[]>([]);
   const { t } = useLanguage();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.fromTo(cardsRef.current, { y: 80, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, stagger: 0.2, ease: "power3.out", scrollTrigger: { trigger: sectionRef.current, start: "top 75%", toggleActions: "play none none reverse" } });
+      // Анимация карточек проектов
+      gsap.fromTo(cardsRef.current, 
+        { y: 80, opacity: 0 }, 
+        { y: 0, opacity: 1, duration: 0.8, stagger: 0.2, ease: "power3.out", scrollTrigger: { trigger: sectionRef.current, start: "top 75%", toggleActions: "play none none reverse" } }
+      );
+
+      // Анимация текстовых отзывов
+      if (reviewsRef.current.length > 0) {
+        gsap.fromTo(reviewsRef.current,
+          { y: 50, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.8, stagger: 0.2, ease: "power3.out", scrollTrigger: { trigger: reviewsRef.current[0], start: "top 85%", toggleActions: "play none none reverse" } }
+        );
+      }
     }, sectionRef);
     return () => ctx.revert();
-  }, []);
+  }, [t.port]); // Перезапуск анимаций при смене языка
 
   const addToCardsRef = (el: HTMLDivElement | null) => {
     if (el && !cardsRef.current.includes(el)) cardsRef.current.push(el);
   };
 
+  const addToReviewsRef = (el: HTMLDivElement | null) => {
+    if (el && !reviewsRef.current.includes(el)) reviewsRef.current.push(el);
+  };
+
   return (
     <section ref={sectionRef} className="py-24 bg-bgDark border-t border-white/5 relative" id="portfolio">
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
+        
+        {/* Заголовок портфолио */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div className="max-w-2xl">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">{t.port.title} <span className="text-primary">{t.port.titleSpan}</span></h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              {t.port.title} <span className="text-primary">{t.port.titleSpan}</span>
+            </h2>
             <p className="text-gray-400 text-lg">{t.port.desc}</p>
           </div>
           <button className="flex items-center gap-2 text-white border border-white/20 px-6 py-4 rounded-xl font-semibold transition-colors hover:bg-white/10 shrink-0">
@@ -37,8 +58,9 @@ export default function Portfolio() {
           </button>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {t.port.projects.map((project) => (
+        {/* Сетка проектов */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-32">
+          {t.port.projects.map((project: any) => (
             <div key={project.id} ref={addToCardsRef} className="group relative h-[450px] md:h-[500px] rounded-2xl overflow-hidden cursor-pointer bg-white/5 border border-white/10">
               <div className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 ease-in-out group-hover:scale-110" style={{ backgroundImage: `url(${project.image})` }} />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/60 to-transparent transition-opacity duration-500 group-hover:opacity-90 group-hover:bg-[#0A0A0A]/90" />
@@ -85,6 +107,50 @@ export default function Portfolio() {
             </div>
           ))}
         </div>
+
+        {/* НОВЫЙ БЛОК: Текстовые отзывы с рейтингом */}
+        <div className="pt-12 border-t border-white/10">
+          <div className="max-w-2xl mb-12">
+            <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              {t.port.reviewsTitle} <span className="text-primary">{t.port.reviewsTitleSpan}</span>
+            </h3>
+            <p className="text-gray-400 text-lg">
+              {t.port.reviewsDesc}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {t.port.reviews.map((review: any) => (
+              <div 
+                key={review.id} 
+                ref={addToReviewsRef}
+                className="group relative rounded-2xl p-8 bg-white/5 border border-white/10 hover:border-primary/30 transition-all duration-300 flex flex-col h-full overflow-hidden"
+              >
+                {/* Фоновая иконка кавычек для стиля */}
+                <Quote className="absolute top-6 right-6 w-16 h-16 text-white/5 group-hover:text-primary/10 transition-colors duration-500 rotate-12" />
+                
+                {/* Звездный рейтинг */}
+                <div className="flex gap-1 mb-6 relative z-10">
+                  {[...Array(review.rating)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-primary text-primary" />
+                  ))}
+                </div>
+                
+                {/* Текст отзыва */}
+                <p className="text-gray-300 text-base leading-relaxed mb-8 flex-grow italic relative z-10">
+                  «{review.text}»
+                </p>
+                
+                {/* Информация об авторе */}
+                <div className="mt-auto border-t border-white/10 pt-6 relative z-10">
+                  <h4 className="text-lg font-bold text-white mb-1">{review.company}</h4>
+                  <p className="text-sm text-gray-500">{review.author}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   );

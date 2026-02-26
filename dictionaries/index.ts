@@ -6,8 +6,11 @@ export const dictionaries = {
       calc: "Калькулятор", prod: "Производство", proj: "Проекты", steps: "Этапы", contactBtn: "Связаться с нами",
     },
     hero: {
-      badge: "Топ-10 EPC подрядчиков в Узбекистане", title1: "Проектирование и", title2: "строительство СЭС", title3: "для вашего бизнеса",
-      desc: "Снижение затрат на электроэнергию до 80%. Полный цикл работ: от первичного аудита до ввода станции в эксплуатацию с гарантией.",
+      badge: "Топ-10 EPC подрядчиков в Узбекистане", 
+      title1: "Снизим расходы на", 
+      title2: "электроэнергию", 
+      title3: "до 90% за 90 дней",
+      desc: "Проектируем, поставляем и устанавливаем солнечные электростанции под ключ для бизнеса и частных объектов в Узбекистане с гарантией результата.",
       btnPrimary: "Рассчитать стоимость", btnSecondary: "Посмотреть портфолио",
       stat1: "Реализованных проектов", stat2: "Введенной мощности", stat3: "Гарантия на панели (лет)",
     },
@@ -38,6 +41,13 @@ export const dictionaries = {
         { id: 2, client: "Westminster International School", power: "150 кВт", location: "г. Ташкент", paybackVal: "3.5", co2Val: "135", modules: "Оптимизаторы мощности", image: "https://images.unsplash.com/photo-1724041875334-0a6397111c7e?q=80&w=687&auto=format&fit=crop" },
         { id: 3, client: "Sedat Triko Tashkent", power: "500 кВт", location: "г. Ташкент", paybackVal: "2.8", co2Val: "450", modules: "Промышленный инвертор", image: "https://images.unsplash.com/photo-1611365892117-00ac5ef43c90?q=80&w=1470&auto=format&fit=crop" },
         { id: 4, client: "Agromir Самарканд", power: "1.2 МВт", location: "г. Самарканд", paybackVal: "2.5", co2Val: "1080", modules: "Трекерная система", image: "https://images.unsplash.com/photo-1617269778723-73a40cf299bd?q=80&w=1470&auto=format&fit=crop" }
+      ],
+      reviewsTitle: "Отзывы", reviewsTitleSpan: "клиентов",
+      reviewsDesc: "Что говорят о нас партнеры после успешного запуска проектов и оценки реальной генерации.",
+      reviews: [
+        { id: 1, company: "LUKOIL Uzbekistan", author: "Служба главного энергетика", text: "Проект СЭС на 200 кВт реализован строго в рамках EPC-контракта. Выражаем благодарность за высокий уровень инженерной подготовки, прозрачность процессов и соблюдение международных стандартов.", rating: 5 },
+        { id: 2, company: "Agromir Самарканд", author: "Техническая дирекция", text: "Станция мощностью 1.2 МВт показала отличные результаты генерации уже в первый месяц эксплуатации. Фактическая окупаемость полностью соответствует заявленному на старте ТЭО.", rating: 5 },
+        { id: 3, company: "Sedat Triko Tashkent", author: "Руководство предприятия", text: "Смонтировали 500 кВт без малейшей остановки нашего основного производства. Качество оборудования Tier-1 и профессионализм монтажных бригад компании на высшем уровне.", rating: 5 }
       ]
     },
     clients: {
@@ -73,8 +83,11 @@ export const dictionaries = {
       calc: "Kalkulyator", prod: "Ishlab chiqarish", proj: "Loyihalar", steps: "Bosqichlar", contactBtn: "Biz bilan bog'lanish",
     },
     hero: {
-      badge: "O'zbekistondagi Top-10 EPC pudratchilari", title1: "Loyihalash va", title2: "QES qurilishi", title3: "sizning biznesingiz uchun",
-      desc: "Elektr energiyasi xarajatlarini 80% gacha kamaytirish. To'liq ish tsikli: dastlabki auditdan stansiyani kafolat bilan foydalanishga topshirishgacha.",
+      badge: "O'zbekistondagi Top-10 EPC pudratchilari", 
+      title1: "Elektr energiyasi", 
+      title2: "xarajatlarini", 
+      title3: "90 kun ichida 90% gacha kamaytiramiz",
+      desc: "O'zbekistonda biznes va xususiy ob'ektlar uchun quyosh elektr stansiyalarini kafolatlangan natija bilan kalit taslim asosida loyihalashtiramiz, yetkazib beramiz va o'rnatamiz.",
       btnPrimary: "Narxni hisoblash", btnSecondary: "Portfolioni ko'rish",
       stat1: "Amalga oshirilgan loyihalar", stat2: "Ishga tushirilgan quvvat", stat3: "Panellarga kafolat (yil)",
     },
@@ -105,6 +118,13 @@ export const dictionaries = {
         { id: 2, client: "Westminster International School", power: "150 kVt", location: "Toshkent sh.", paybackVal: "3.5", co2Val: "135", modules: "Quvvat optimizatorlari", image: "https://images.unsplash.com/photo-1724041875334-0a6397111c7e?q=80&w=687&auto=format&fit=crop" },
         { id: 3, client: "Sedat Triko Tashkent", power: "500 kVt", location: "Toshkent sh.", paybackVal: "2.8", co2Val: "450", modules: "Sanoat invertori", image: "https://images.unsplash.com/photo-1611365892117-00ac5ef43c90?q=80&w=1470&auto=format&fit=crop" },
         { id: 4, client: "Agromir Samarqand", power: "1.2 MVt", location: "Samarqand sh.", paybackVal: "2.5", co2Val: "1080", modules: "Treker tizimi", image: "https://images.unsplash.com/photo-1617269778723-73a40cf299bd?q=80&w=1470&auto=format&fit=crop" }
+      ],
+      reviewsTitle: "Mijozlar", reviewsTitleSpan: "sharhlari",
+      reviewsDesc: "Loyihalar muvaffaqiyatli ishga tushirilgandan va real generatsiya baholangandan keyin hamkorlarimiz biz haqimizda nima deyishadi.",
+      reviews: [
+        { id: 1, company: "LUKOIL Uzbekistan", author: "Bosh energetika xizmati", text: "200 kVt quvvatga ega QES loyihasi qat'iy ravishda EPC shartnomasi doirasida amalga oshirildi. Yuqori darajadagi muhandislik tayyorgarligi, jarayonlarning shaffofligi va xalqaro standartlarga rioya qilinganligi uchun minnatdorchilik bildiramiz.", rating: 5 },
+        { id: 2, company: "Agromir Samarqand", author: "Texnik direksiya", text: "1.2 MVt quvvatli stansiya foydalanishning birinchi oyidayoq ajoyib generatsiya natijalarini ko'rsatdi. Haqiqiy qoplash muddati boshlang'ich TIAga to'liq mos keladi.", rating: 5 },
+        { id: 3, company: "Sedat Triko Tashkent", author: "Korxona rahbariyati", text: "500 kVt quvvatni asosiy ishlab chiqarishimizni bir zum ham to'xtatmasdan o'rnatib berishdi. Tier-1 uskunalari sifati va kompaniya montaj brigadalarining professionalligi eng yuqori darajada.", rating: 5 }
       ]
     },
     clients: {
@@ -140,8 +160,11 @@ export const dictionaries = {
       calc: "Calculator", prod: "Production", proj: "Projects", steps: "Process", contactBtn: "Contact Us",
     },
     hero: {
-      badge: "Top-10 EPC Contractors in Uzbekistan", title1: "Engineering and", title2: "Construction of SPP", title3: "for your business",
-      desc: "Reduce electricity costs by up to 80%. Full cycle of works: from initial audit to commissioning of the station with a guarantee.",
+      badge: "Top-10 EPC Contractors in Uzbekistan", 
+      title1: "Reduce your", 
+      title2: "electricity costs", 
+      title3: "by up to 90% in 90 days",
+      desc: "We design, supply, and install turnkey solar power plants for businesses and private properties in Uzbekistan with guaranteed results.",
       btnPrimary: "Calculate Cost", btnSecondary: "View Portfolio",
       stat1: "Completed Projects", stat2: "Commissioned Capacity", stat3: "Panel Warranty (years)",
     },
@@ -172,6 +195,13 @@ export const dictionaries = {
         { id: 2, client: "Westminster International School", power: "150 kW", location: "Tashkent", paybackVal: "3.5", co2Val: "135", modules: "Power Optimizers", image: "https://images.unsplash.com/photo-1724041875334-0a6397111c7e?q=80&w=687&auto=format&fit=crop" },
         { id: 3, client: "Sedat Triko Tashkent", power: "500 kW", location: "Tashkent", paybackVal: "2.8", co2Val: "450", modules: "Industrial Inverter", image: "https://images.unsplash.com/photo-1611365892117-00ac5ef43c90?q=80&w=1470&auto=format&fit=crop" },
         { id: 4, client: "Agromir Samarkand", power: "1.2 MW", location: "Samarkand", paybackVal: "2.5", co2Val: "1080", modules: "Tracker System", image: "https://images.unsplash.com/photo-1617269778723-73a40cf299bd?q=80&w=1470&auto=format&fit=crop" }
+      ],
+      reviewsTitle: "Client", reviewsTitleSpan: "Reviews",
+      reviewsDesc: "What our partners say about us after the successful launch of projects and evaluation of actual generation.",
+      reviews: [
+        { id: 1, company: "LUKOIL Uzbekistan", author: "Chief Power Engineer Service", text: "The 200 kW SPP project was implemented strictly within the EPC contract. We express our gratitude for the high level of engineering preparation, transparency of processes, and adherence to international standards.", rating: 5 },
+        { id: 2, company: "Agromir Samarkand", author: "Technical Directorate", text: "The 1.2 MW station showed excellent generation results in the very first month of operation. The actual payback fully corresponds to the Feasibility Study declared at the start.", rating: 5 },
+        { id: 3, company: "Sedat Triko Tashkent", author: "Company Management", text: "Installed 500 kW without the slightest stop to our main production. The quality of Tier-1 equipment and the professionalism of the company's installation teams are top-notch.", rating: 5 }
       ]
     },
     clients: {
