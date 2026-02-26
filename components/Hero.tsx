@@ -29,14 +29,14 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative w-full h-screen flex items-center bg-bgDark text-white overflow-hidden">
+    <section className="relative w-full min-h-[100dvh] flex items-center bg-bgDark text-white overflow-hidden pt-28 md:pt-0">
       <div ref={bgRef} className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2072&auto=format&fit=crop)' }} />
       <div className="absolute inset-0 z-0 bg-gradient-to-r from-[#0A0A0A] via-[#0A0A0A]/80 to-transparent" />
       <div className="absolute inset-0 z-0 bg-black/30" />
 
-      <div className="container mx-auto px-6 md:px-12 relative z-10 w-full flex flex-col justify-center pt-20">
+      <div className="container mx-auto px-6 md:px-12 relative z-10 w-full flex flex-col justify-center pt-5 md:pt-20 pb-16 md:pb-0">
         <div className="max-w-4xl">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6 tracking-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6 tracking-tight break-words">
             <span ref={addToTitleRef} className="block overflow-hidden pb-1">{t.hero.title1}</span>
             <span ref={addToTitleRef} className="block overflow-hidden pb-1">{t.hero.title2}</span>
             <span ref={addToTitleRef} className="block overflow-hidden pb-1 text-primary">{t.hero.title3}</span>
@@ -44,7 +44,7 @@ export default function Hero() {
 
           <p ref={descRef} className="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl leading-relaxed">{t.hero.desc}</p>
 
-          <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-4 mb-16">
+          <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-4 mb-12">
             <button className="group bg-primary text-bgDark px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all hover:bg-white hover:scale-[1.02] active:scale-95">
               {t.hero.btnPrimary}
               <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
@@ -59,11 +59,11 @@ export default function Hero() {
               <div className="text-3xl font-bold text-white mb-1">100+</div>
               <div className="text-sm text-gray-400">{t.hero.stat1}</div>
             </div>
-            <div>
+            <div className="hidden md:block">
               <div className="text-3xl font-bold text-white mb-1">10 МВт</div>
               <div className="text-sm text-gray-400">{t.hero.stat2}</div>
             </div>
-            <div className="hidden md:block">
+            <div>
               <div className="text-3xl font-bold flex items-center gap-2 text-success mb-1">
                 <ShieldCheck className="w-6 h-6" /> 25
               </div>

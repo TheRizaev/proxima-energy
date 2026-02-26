@@ -40,8 +40,8 @@ export default function Production() {
           <p className="text-gray-400 text-lg max-w-2xl">{t.prod.desc}</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-fr">
-          <div ref={addToBentoRef} className="md:col-span-2 bg-white/5 border border-white/10 rounded-2xl p-8 flex flex-col justify-between group hover:bg-white/10 transition-colors">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:auto-rows-fr">
+          <div ref={addToBentoRef} className="md:col-span-2 bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 flex flex-col justify-between group hover:bg-white/10 transition-colors">
             <div>
               <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 border border-primary/20">
                 <Factory className="w-6 h-6 text-primary" />
