@@ -81,13 +81,12 @@ export default function Hero() {
 
       {/* КОНТЕНТНЫЙ БЛОК */}
       {/* Контейнер ограничивает ширину контента и задает отступы */}
-      <div className="container mx-auto px-6 md:px-12 relative z-10 w-full flex flex-col justify-center">
+      <div className="container mx-auto px-6 md:px-12 relative z-10 w-full flex flex-col justify-center pt-32">
         
         <div className="max-w-4xl"> {/* Ограничитель ширины текста для комфортного чтения */}
           
           {/* Премиальный бейдж (Badge) с эффектом стекла (glassmorphism) */}
           <div ref={badgeRef} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-8">
-            <Zap className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium tracking-wide text-gray-300 uppercase">
               Топ-10 EPC подрядчиков в Узбекистане
             </span>

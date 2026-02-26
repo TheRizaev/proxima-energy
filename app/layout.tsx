@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import SmoothScroll from "../components/SmoothScroll"; // Относительный путь импорта функции
+import SmoothScroll from "../components/SmoothScroll";
+import { LanguageProvider } from "../context/LanguageContext"; // Импорт провайдера
 
-// Инициализация шрифта
 const inter = Inter({ subsets: ["latin", "cyrillic"] });
 
-// Массив метаданных для поисковой индексации
 export const metadata: Metadata = {
   title: "Proxima Energy | Солнечные электростанции для бизнеса",
   description: "Проектирование и строительство СЭС под ключ в Узбекистане.",
@@ -19,12 +18,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      {/* Задание базовых параметров рендеринга: шрифт, цвет фона (#0A0A0A) и цвет шрифта */}
-      <body className={`${inter.className} bg-[#0A0A0A] text-white antialiased`}>
-        {/* Инъекция логики Lenis в дерево DOM */}
-        <SmoothScroll>
-          {children}
-        </SmoothScroll>
+      <body className={`${inter.className} bg-bgDark text-white antialiased`}>
+        {/* Интеграция глобального стейта языка на весь проект */}
+        <LanguageProvider>
+          <SmoothScroll>
+            {children}
+          </SmoothScroll>
+        </LanguageProvider>
       </body>
     </html>
   );

@@ -16,8 +16,7 @@ const PROJECTS = [
     payback: "3.2 года",
     co2: "180 тонн",
     modules: "Tier-1 монокристалл",
-    // Индустриальный пейзаж (оставляем старое, если оно рабочее)
-    image: "https://images.unsplash.com/photo-1708568328382-8daa0944d801?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    image: "https://images.unsplash.com/photo-1708568328382-8daa0944d801?q=80&w=1470&auto=format&fit=crop"
   },
   {
     id: 2,
@@ -27,8 +26,7 @@ const PROJECTS = [
     payback: "3.5 года",
     co2: "135 тонн",
     modules: "Оптимизаторы мощности",
-    // НОВОЕ ФОТО: Современная крышная установка на здании университета/школы
-    image: "https://images.unsplash.com/photo-1724041875334-0a6397111c7e?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    image: "https://images.unsplash.com/photo-1724041875334-0a6397111c7e?q=80&w=687&auto=format&fit=crop"
   },
   {
     id: 3,
@@ -38,8 +36,7 @@ const PROJECTS = [
     payback: "2.8 года",
     co2: "450 тонн",
     modules: "Промышленный инвертор",
-    // Крыша промышленного объекта (оставляем старое)
-    image: "https://images.unsplash.com/photo-1611365892117-00ac5ef43c90?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    image: "https://images.unsplash.com/photo-1611365892117-00ac5ef43c90?q=80&w=1470&auto=format&fit=crop"
   },
   {
     id: 4,
@@ -49,8 +46,7 @@ const PROJECTS = [
     payback: "2.5 года",
     co2: "1080 тонн",
     modules: "Трекерная система",
-    // НОВОЕ ФОТО: Масштабная наземная станция в засушливом/агро ландшафте
-    image: "https://images.unsplash.com/photo-1617269778723-73a40cf299bd?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    image: "https://images.unsplash.com/photo-1617269778723-73a40cf299bd?q=80&w=1470&auto=format&fit=crop"
   }
 ];
 
@@ -59,8 +55,6 @@ export default function Portfolio() {
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    // GSAP используется исключительно для первичного появления элементов при скролле.
-    // Анимация наведения (hover) делегирована CSS для минимизации нагрузки на Main Thread JS.
     const ctx = gsap.context(() => {
       gsap.fromTo(
         cardsRef.current,
@@ -90,13 +84,13 @@ export default function Portfolio() {
   };
 
   return (
-    <section ref={sectionRef} className="py-24 bg-[#0A0A0A] border-t border-white/5 relative">
+    <section ref={sectionRef} className="py-24 bg-bgDark border-t border-white/5 relative" id="portfolio">
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
         
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div className="max-w-2xl">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Технические <span className="text-[#FFB800]">кейсы</span>
+              Технические <span className="text-primary">кейсы</span>
             </h2>
             <p className="text-gray-400 text-lg">
               Детальный разбор реализованных проектов. Математика окупаемости и спецификации интегрированного оборудования.
@@ -107,30 +101,22 @@ export default function Portfolio() {
           </button>
         </div>
 
-        {/* Сетка проектов: 1 колонка на мобильных, 2 на десктопах */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {PROJECTS.map((project, index) => (
+          {PROJECTS.map((project) => (
             <div 
               key={project.id}
               ref={addToCardsRef}
-              // Класс group инициализирует триггер для всех дочерних элементов при наведении
               className="group relative h-[450px] md:h-[500px] rounded-2xl overflow-hidden cursor-pointer bg-white/5 border border-white/10"
             >
-              {/* Фоновое изображение. При hover: увеличивается масштаб (scale-110) */}
               <div 
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 ease-in-out group-hover:scale-110"
                 style={{ backgroundImage: `url(${project.image})` }}
               />
-              
-              {/* Базовый градиент. При hover: становится плотнее, чтобы текст легко читался */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/60 to-transparent transition-opacity duration-500 group-hover:opacity-90 group-hover:bg-[#0A0A0A]/90" />
 
-              {/* Контейнер с контентом. Используем flexbox для позиционирования */}
               <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                
-                {/* Заголовок и локация (Всегда видимы) */}
                 <div className="mb-4 transform transition-transform duration-500 group-hover:-translate-y-4">
-                  <div className="flex items-center gap-2 text-[#FFB800] mb-3">
+                  <div className="flex items-center gap-2 text-primary mb-3">
                     <MapPin className="w-4 h-4" />
                     <span className="text-sm font-medium tracking-wide">{project.location}</span>
                   </div>
@@ -139,15 +125,12 @@ export default function Portfolio() {
                   </h3>
                 </div>
                 
-                {/* Блок со скрытыми характеристиками. 
-                    По умолчанию: сдвинут вниз (translate-y-8) и прозрачен (opacity-0).
-                    При hover: возвращается на место (translate-y-0) и становится видимым (opacity-100). */}
                 <div className="grid grid-cols-2 gap-y-4 gap-x-6 overflow-hidden max-h-0 opacity-0 transform translate-y-8 transition-all duration-500 ease-out group-hover:max-h-[200px] group-hover:opacity-100 group-hover:translate-y-0 border-t border-white/10 pt-6">
                   
                   <div className="flex flex-col gap-1">
                     <span className="text-xs text-gray-500 uppercase tracking-wider">Мощность</span>
                     <div className="flex items-center gap-2 text-white">
-                      <Zap className="w-4 h-4 text-[#FFB800]" />
+                      <Zap className="w-4 h-4 text-primary" />
                       <span className="font-mono font-bold text-lg">{project.power}</span>
                     </div>
                   </div>
@@ -171,7 +154,7 @@ export default function Portfolio() {
                   <div className="flex flex-col gap-1">
                     <span className="text-xs text-gray-500 uppercase tracking-wider">Оборудование</span>
                     <div className="flex items-center gap-2 text-white">
-                      <Cpu className="w-4 h-4 text-[#FFB800]" />
+                      <Cpu className="w-4 h-4 text-primary" />
                       <span className="font-medium text-sm">{project.modules}</span>
                     </div>
                   </div>
